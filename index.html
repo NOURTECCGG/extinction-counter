@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Extinction Counter</title>
+  <title>George Wildlife</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,10 +19,22 @@
       text-align: center;
     }
 
+    /* LOGO */
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .logo img {
+  height: clamp(80px, 12vw, 130px);
+}
+
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 120px 20px 140px;
+      padding: 140px 20px 140px;
     }
 
     .number {
@@ -75,7 +87,6 @@
       text-decoration: underline;
     }
 
-    /* SCROLL ARROW */
     .arrow {
       margin-top: 70px;
       font-size: 60px;
@@ -89,10 +100,8 @@
       100% { transform: translateY(0); opacity: 0.35; }
     }
 
-    /* LOST SECTION */
     .lost-section {
       padding: 140px 20px 80px;
-      background: #000;
     }
 
     .lost-title {
@@ -124,7 +133,6 @@
       line-height: 1.7;
     }
 
-    /* JOIN US SECTION */
     .join {
       margin-top: 40px;
       padding-bottom: 60px;
@@ -147,6 +155,11 @@
 
 <body>
 
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo.png" alt="George Wildlife Logo">
+  </div>
+
   <!-- COUNTER -->
   <div class="container">
 
@@ -159,9 +172,7 @@
       This counter is based on scientific estimates from
       <a href="https://www.iucnredlist.org" target="_blank">IUCN</a>
       and
-      <a href="https://www.ipbes.net" target="_blank">IPBES</a>
-      (UN science body).<br>
-      Extinction is a process, not a moment.
+      <a href="https://www.ipbes.net" target="_blank">IPBES</a>.
     </div>
 
     <div class="warning">
@@ -171,7 +182,7 @@
     <div class="arrow">↓</div>
 
     <div class="footer">
-      Estimated yearly extinction model • Updates automatically
+      George Wildlife • Independent conservation project
     </div>
 
   </div>
@@ -183,29 +194,19 @@
 
     <div class="lost-item">
       <img src="images/dodo.jpg">
-      <p>
-        Once common.<br>
-        Remembered only because someone drew it.
-      </p>
+      <p>Once common.<br>Remembered only because someone drew it.</p>
     </div>
 
     <div class="lost-item">
       <img src="images/pigeon.jpg">
-      <p>
-        Billions existed.<br>
-        Silence came faster than anyone expected.
-      </p>
+      <p>Billions existed.<br>Silence came faster than anyone expected.</p>
     </div>
 
     <div class="lost-item">
       <img src="images/thylacine.jpg">
-      <p>
-        Declared gone.<br>
-        Long after it stopped being seen.
-      </p>
+      <p>Declared gone.<br>Long after it stopped being seen.</p>
     </div>
 
-    <!-- JOIN US -->
     <div class="join">
       <h3>Join us on</h3>
       <div class="join-links">
@@ -216,7 +217,6 @@
 
   </div>
 
-  <!-- COUNTER SCRIPT -->
   <script>
     const yearlyEstimate = 10000;
 
@@ -232,7 +232,6 @@
 
     setTimeout(() => {
       const speed = 30;
-
       const animation = setInterval(() => {
         current += Math.ceil(finalCount / 120);
         if (current >= finalCount) {
