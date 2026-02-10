@@ -302,6 +302,24 @@ body {
   }
 }
 
+.pause-reflect {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+
 
   </style>
 </head>
@@ -387,6 +405,10 @@ body {
       </p>
     </div>
 
+<div id="pause-reflect" class="pause-reflect">
+  You’ve spent time here. Thank you for noticing.
+</div>
+
     <!-- JOIN US -->
     <div class="join">
       <h3>Join us on</h3>
@@ -436,6 +458,20 @@ body {
 
   document.getElementById("last-updated").textContent =
     "Last updated: " + formatted;
+</script>
+
+<script>
+  setTimeout(() => {
+    const msg = document.getElementById("pause-reflect");
+    if (!msg) return;
+
+    msg.style.opacity = "1";
+
+    setTimeout(() => {
+      msg.style.opacity = "0";
+    }, 5000); // visible for 5 seconds
+
+  }, 13000); // appears after 20 seconds
 </script>
 
 
