@@ -1,5 +1,5 @@
 ## 🌍 Live Website
-https://nourteccgg.github.io/extinction-counter/
+https://nourteccgg.github.io/George-Wildlife-Website/
 
 ---
 
